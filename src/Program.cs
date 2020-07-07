@@ -8,22 +8,21 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            string str = @"E:\test.xlsx";
-            Test(str);
-
-            Console.WriteLine("生成成功!");
-            Console.ReadKey();
+            Initialization();
+            Command command = new Command(args);
+            try
+            {
+                command.Execute();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
-        static void Test(string path)
+        static void Initialization()
         {
-            Services services = new Services(new TestRead(), new TestGenerater());
-            ExcelReader reader = new ExcelReader(services.ReadService);
-            CodeGenerater codeGenerater = new CodeGenerater(services.GenerateService);
-
-            var data = reader.Process(path);
-            codeGenerater.GenerateCode(data);
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace SimpleExcel2Code
 {
@@ -27,6 +28,10 @@ namespace SimpleExcel2Code
 
         private void WriteToFile(string code, string path)
         {
+            string dir = Path.GetDirectoryName(path);
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+
             using (var file = File.Create(path))
             {
                 using (var stream = new StreamWriter(file))

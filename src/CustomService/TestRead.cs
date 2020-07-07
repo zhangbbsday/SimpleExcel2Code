@@ -19,7 +19,7 @@ namespace SimpleExcel2Code.CustomService
         private string[] GetComment(string copyright, string lastEdit, string version)
         {
             List<string> strs = new List<string>();
-            using (var stream = new StreamReader("CustomService\\TestFileComment.txt"))
+            using (var stream = new StreamReader("TestFileComment.txt"))
             {
                 string line;
                 while ((line = stream.ReadLine()) != null)
