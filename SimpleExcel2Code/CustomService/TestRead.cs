@@ -10,9 +10,9 @@ namespace SimpleExcel2Code.CustomService
     {
         public string[] ReadFileComment(Table table)
         {
-            string copyright = (string)table[0][0];
-            string lastEdit = (string)table[1][0];
-            string version = (string)table[1][1];
+            string copyright = table[0][0];
+            string lastEdit = table[1][0];
+            string version = table[1][1];
             return GetComment(copyright, lastEdit, version);
         }
 
@@ -37,8 +37,8 @@ namespace SimpleExcel2Code.CustomService
         public string[] ReadFileInfo(Table table)
         {
             string[] info = new string[2];
-            info[0] = (string)table[2][0];
-            info[1] = (string)table[2][1];
+            info[0] = table[2][0];
+            info[1] = table[2][1];
             return info;
         }
 
@@ -46,9 +46,9 @@ namespace SimpleExcel2Code.CustomService
         {
             List<string> strs = new List<string>();
 
-            for (int i = 0; i < table[5].ItemArray.Length; i++)
+            for (int i = 0; i < table[5].Count; i++)
             {
-                string str = (string)table[5][i];
+                string str = table[5][i];
                 strs.Add(str);
             }
             return strs.ToArray();
@@ -58,9 +58,9 @@ namespace SimpleExcel2Code.CustomService
         {
             List<string> strs = new List<string>();
 
-            for (int i = 0; i < table[4].ItemArray.Length; i++)
+            for (int i = 0; i < table[4].Count; i++)
             {
-                string str = (string)table[4][i];
+                string str = table[4][i];
                 strs.Add(str);
             }
             return strs.ToArray();
@@ -70,9 +70,9 @@ namespace SimpleExcel2Code.CustomService
         {
             List<string> strs = new List<string>();
 
-            for (int i = 0; i < table[6].ItemArray.Length; i++)
+            for (int i = 0; i < table[6].Count; i++)
             {
-                string str = (string)table[6][i];
+                string str = table[6][i];
                 strs.Add(str);
             }
             return strs.ToArray();
