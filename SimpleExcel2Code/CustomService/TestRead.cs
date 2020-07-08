@@ -46,10 +46,9 @@ namespace SimpleExcel2Code.CustomService
         {
             List<string> strs = new List<string>();
 
-            for (int i = 0; i < table[5].Count; i++)
+            foreach (string s in table[5])
             {
-                string str = table[5][i];
-                strs.Add(str);
+                strs.Add(s);
             }
             return strs.ToArray();
         }
@@ -58,10 +57,9 @@ namespace SimpleExcel2Code.CustomService
         {
             List<string> strs = new List<string>();
 
-            for (int i = 0; i < table[4].Count; i++)
+            foreach (string s in table[4])
             {
-                string str = table[4][i];
-                strs.Add(str);
+                strs.Add(s);
             }
             return strs.ToArray();
         }
@@ -70,10 +68,9 @@ namespace SimpleExcel2Code.CustomService
         {
             List<string> strs = new List<string>();
 
-            for (int i = 0; i < table[6].Count; i++)
+            foreach (string s in table[6])
             {
-                string str = table[6][i];
-                strs.Add(str);
+                strs.Add(s);
             }
             return strs.ToArray();
         }

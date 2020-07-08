@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections;
+using System.Data;
 
 namespace SimpleExcel2Code
 {
@@ -17,6 +18,14 @@ namespace SimpleExcel2Code
             public string GetValue(int col)
             {
                 return DataRow.ItemArray[col].ToString();
+            }
+
+            public IEnumerator GetEnumerator()
+            {
+                for (int i = 0; i < DataRow.ItemArray.Length; i++)
+                {
+                    yield return GetValue(i);
+                }
             }
         }
     }
