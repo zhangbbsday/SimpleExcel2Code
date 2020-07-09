@@ -32,7 +32,7 @@ namespace SimpleExcel2Code
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
 
-            using (var file = File.Create(path))
+            using (var file = File.Open(path, FileMode.OpenOrCreate, FileAccess.Write))
             {
                 using (var stream = new StreamWriter(file))
                 {

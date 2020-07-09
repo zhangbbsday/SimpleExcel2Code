@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="TestFileComment.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Update="TestTemple.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
