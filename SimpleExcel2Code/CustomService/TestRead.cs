@@ -6,17 +6,17 @@ namespace SimpleExcel2Code.CustomService
     {
         public string[] ReadFileComment(Table table)
         {
-            string copyright = table[0][0];
-            string lastEdit = table[1][0];
-            string version = table[1][1];
+            string copyright = table[0, 0];
+            string lastEdit = table[1, 0];
+            string version = table[1, 1];
             return new string[] { copyright, lastEdit, version };
         }
 
         public string[] ReadFileInfo(Table table)
         {
             string[] info = new string[2];
-            info[0] = table[2][0];
-            info[1] = table[2][1];
+            info[0] = table[2, 0];
+            info[1] = table[2, 1];
             return info;
         }
 

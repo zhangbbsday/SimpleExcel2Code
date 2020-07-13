@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 
-
 namespace SimpleExcel2Code
 {
     public partial class Table
     {
         public Row this[int row] => Rows[row];
+        public string this[int row, int col] => Rows[row][col];
         public string Name { get => DataTable.TableName; }
         private DataTable DataTable { get; }
         private List<Row> Rows { get; }

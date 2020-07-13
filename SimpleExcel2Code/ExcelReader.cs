@@ -2,7 +2,6 @@
 using System.IO;
 using ExcelDataReader;
 
-
 namespace SimpleExcel2Code
 {
     public class ExcelReader
