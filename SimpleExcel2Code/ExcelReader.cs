@@ -6,6 +6,7 @@ namespace SimpleExcel2Code
 {
     public class ExcelReader
     {
+        public Table DataTable { get; private set; }
         private IReadService ReadService { get; }
         public ExcelReader(IReadService readService)
         {
@@ -14,12 +15,14 @@ namespace SimpleExcel2Code
 
         public DataCode Process(string path, int sheetIndex = 0)
         {
-            Table table = GetTable(path, sheetIndex);
-            return GenerateDataCode(table);
+            DataTable = GetTable(path, sheetIndex);
+            return GenerateDataCode(DataTable);
         }
 
-        private Table GetTable(string path, int sheetIndex)
+        private Table GetTable(string path, int sheetIndex = 0)
         {
+            if (DataTable != null)
+                return DataTable;
 
             using (var stream = File.Open(path, FileMode.Open, FileAccess.Read))
             {
