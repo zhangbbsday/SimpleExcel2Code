@@ -8,7 +8,7 @@ namespace SimpleExcel2Code
     {
         public Table DataTable { get; private set; }
         private IReadService ReadService { get; }
-        public ExcelReader(IReadService readService)
+        public ExcelReader(IReadService readService = null)
         {
             ReadService = readService;
         }
@@ -16,6 +16,9 @@ namespace SimpleExcel2Code
         public DataCode Process(string path, int sheetIndex = 0)
         {
             DataTable = GetTable(path, sheetIndex);
+            if (ReadService == null)
+                return null;
+
             return GenerateDataCode(DataTable);
         }
 
