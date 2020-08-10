@@ -8,6 +8,7 @@ namespace SimpleExcel2Code
         public Row this[int row] => Rows[row];
         public string this[int row, int col] => Rows[row][col];
         public string Name { get => DataTable.TableName; }
+        public int Length { get => Rows.Count; }
         private DataTable DataTable { get; }
         private List<Row> Rows { get; }
         public Table(DataTable dataTable)
