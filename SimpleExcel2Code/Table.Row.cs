@@ -17,7 +17,7 @@ namespace SimpleExcel2Code
 
             public object GetValue(int col)
             {
-                return DataRow.ItemArray[col].ToString();
+                return DataRow.ItemArray[col];
             }
 
             public IEnumerator GetEnumerator()
