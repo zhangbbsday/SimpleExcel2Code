@@ -8,14 +8,14 @@ namespace SimpleExcel2Code
         public class Row
         {
             public int Count => DataRow.ItemArray.Length;
-            public string this[int col] => GetValue(col);
+            public object this[int col] => GetValue(col);
             private DataRow DataRow { get; }
             public Row(DataRow row)
             {
                 DataRow = row;
             }
 
-            public string GetValue(int col)
+            public object GetValue(int col)
             {
                 return DataRow.ItemArray[col].ToString();
             }
